@@ -25,5 +25,14 @@ if (mysqli_query($link, "CREATE TABLE `sqlitest`.`users` ( `id` BIGINT NOT NULL 
 <p>テーブルの作成に失敗</p>
 <?php exit;endif;?>
 
+<?php // 4. データの入力
+$users = file_get_contents("users.sql");
+if (mysqli_query($link, $users) === TRUE):?>
+<p>データの入力に成功</p>
+<?php else: ?>
+<p>データの入力に失敗</p>
+<?php exit;endif;?>
+
 <?php mysqli_close($link); // 99. 接続終了 ?>
+<p>正常終了</p>
 </body></html>

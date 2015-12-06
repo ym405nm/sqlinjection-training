@@ -1,4 +1,4 @@
-<!doctype html><html><head><title>InstallPage</title></head><body>
+<!doctype html><html><head><meta charset="UTF-8"><title>InstallPage</title></head><body>
 <?php
 $user = isset($_GET["user"]) ? $_GET["user"] : "root";
 $pwd = isset($_GET["pwd"]) ? $_GET["pwd"] : "1qazxsw2";
@@ -26,7 +26,8 @@ if (mysqli_query($link, "CREATE TABLE `sqlitest`.`users` ( `id` BIGINT NOT NULL 
 <?php exit;endif;?>
 
 <?php // 4. データの入力
-$users = file_get_contents("users.sql");
+mysqli_set_charset($link, "utf8");
+$users = file_get_contents("users.sql", "UTF-8");
 if (mysqli_query($link, $users) === TRUE):?>
 <p>データの入力に成功</p>
 <?php else: ?>

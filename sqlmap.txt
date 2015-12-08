@@ -1,0 +1,2 @@
+python sqlmap.py -u "http://sqli.test/sample1.php" --data="name=%e5%9d%82%e6%9c%ac%e5%8b%87%e4%ba%ba"
+python sqlmap.py -u "http://sqli.test/sample2.php" --data="username=sakamoto@example.com&password=sakamoto"

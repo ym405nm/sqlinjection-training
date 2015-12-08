@@ -1,0 +1,1 @@
+sakamoto@example.com'+(select * from (select(sleep(20)))a)+'
